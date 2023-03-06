@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WinterWorkShop.Cinema.Data.Models
 {
-    internal class ProjectionModel
+    public class ProjectionModel
     {
+        public int Id { get; set; }
+        public int Time { get; set; }
     }
 }

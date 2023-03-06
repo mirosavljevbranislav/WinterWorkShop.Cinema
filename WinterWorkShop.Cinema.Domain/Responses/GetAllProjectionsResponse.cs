@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WinterWorkShop.Cinema.Domain.Responses
 {
-    internal class GetAllProjections
+    public class GetAllProjectionsResponse
     {
+        public int Id { get; set; }
+        public int Time { get; set; }
     }
 }
