@@ -9,5 +9,6 @@ namespace WinterWorkShop.Cinema.Domain.Common
             new MovieModel { Id = 1, Name = "Spuderman" },
             new MovieModel { Id = 2, Name = "Spuderman 2"}
         };
+        internal List<ProjectionModel> getAllProjectionsResponse;
     }
 }
