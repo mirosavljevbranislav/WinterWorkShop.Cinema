@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WinterWorkShop.Cinema.Data.Models;
+﻿using WinterWorkShop.Cinema.Data.Models;
 using WinterWorkShop.Cinema.Domain.Common;
 
 namespace WinterWorkShop.Cinema.Data.Repositories
 {
-    internal class ProjectionRepository : IProjectionRepository
+    public class ProjectionRepository : IProjectionRepository
     {
         public Database Database = new Database();
         public List<ProjectionModel> GetAllProjections()
         {
             return Database.getAllProjectionsResponse;
+        }
+
+
+        public ProjectionModel GetProjectionById(int id)
+        {
+            var result =  Database.getAllProjectionsResponse.Where(p => p.Id == id).FirstOrDefault();
+   
+            return result;
         }
     }
 }

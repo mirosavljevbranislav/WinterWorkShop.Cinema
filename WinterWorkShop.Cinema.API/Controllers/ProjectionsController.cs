@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WinterWorkShop.Cinema.Data.Repositories;
 using WinterWorkShop.Cinema.Domain.Responses;
+using WinterWorkShop.Cinema.Data.Models;
 
 namespace WinterWorkShop.Cinema.API.Controllers
 {
     [ApiController]
-    [Route("projection")]
-    public class ProjectionsController : ControllerBase
+    
+    public class ProjectionsController : BaseController
     {
 
         public readonly IProjectionRepository _projectionRepository;
@@ -16,8 +17,8 @@ namespace WinterWorkShop.Cinema.API.Controllers
             _projectionRepository = projectionRepository;
         }
 
-        [HttpGet()]
-        public List<GetAllProjectionsResponse> GetAllProjections()
+        [HttpGet("projection")]
+        public List<GetAllProjectionsResponse> GetProjections()
         {
             var projections = _projectionRepository.GetAllProjections();
             var result = new List<GetAllProjectionsResponse>();
@@ -28,6 +29,16 @@ namespace WinterWorkShop.Cinema.API.Controllers
 
             return result;
         }
+
+
+        [HttpGet("projection/{id}")]
+        public ProjectionModel GetProjection(int id)
+        {
+            var projection = _projectionRepository.GetProjectionById(id);
+            return projection;
+        }
+
+        [HttpGet("projection/{movieId}")]
 
     }
 }

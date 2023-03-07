@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WinterWorkShop.Cinema.Data.Models
 {
-    public class ProjectionModel
+    internal class ProjectingMovieModel
     {
-        public int Id { get; set; }
-        public int Time { get; set; }
-        public int MovieId { get; set; }
+        public int MovieID { get; set; }
+
+        public int ProjectionId { get; set; }
     }
 }
