@@ -1,6 +1,5 @@
 ﻿using WinterWorkShop.Cinema.Data.Models;
 using WinterWorkShop.Cinema.Domain.Common;
-using WinterWorkShop.Cinema.Domain.Responses;
 
 namespace WinterWorkShop.Cinema.Data.Repositories
 {
