@@ -38,7 +38,11 @@ namespace WinterWorkShop.Cinema.API.Controllers
             return projection;
         }
 
-        [HttpGet("projection/{movieId}")]
-
+        [HttpGet("projection/{movieId:int}")]
+        public ProjectionModel GetProjectionByMovie(int movieId)
+        {
+            var projection = _projectionRepository.GetProjectionByMovieId(movieId);
+            return projection;
+        }
     }
 }

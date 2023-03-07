@@ -1,4 +1,6 @@
 ﻿using WinterWorkShop.Cinema.Data.Models;
+using WinterWorkShop.Cinema.Data.Repositories;
+using WinterWorkShop.Cinema.Domain.Responses;
 
 namespace WinterWorkShop.Cinema.Domain.Common
 {
@@ -9,6 +11,12 @@ namespace WinterWorkShop.Cinema.Domain.Common
             new MovieModel { Id = 1, Name = "Spuderman" },
             new MovieModel { Id = 2, Name = "Spuderman 2"}
         };
-        internal List<ProjectionModel> getAllProjectionsResponse;
+
+        public List<ProjectionModel> getAllProjectionsResponse = new List<ProjectionModel> 
+        {
+            new ProjectionModel { Id = 1, Time = 2000, MovieId = 1},
+            new ProjectionModel { Id = 2, Time = 1900, MovieId = 2}
+        };
+
     }
 }
