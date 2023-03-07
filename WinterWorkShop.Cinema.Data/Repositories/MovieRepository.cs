@@ -1,5 +1,6 @@
 ﻿using WinterWorkShop.Cinema.Data.Models;
 using WinterWorkShop.Cinema.Domain.Common;
+using WinterWorkShop.Cinema.Domain.Responses;
 
 namespace WinterWorkShop.Cinema.Data.Repositories
 {
@@ -10,6 +11,14 @@ namespace WinterWorkShop.Cinema.Data.Repositories
         public List<MovieModel> GetAllMovies()
         {
             return Database.GetAllMoviesResponses;
+        }
+
+        public MovieModel GetMovieById(int id)
+        {
+            var result = Database.GetAllMoviesResponses.Where(m  => m.Id == id).FirstOrDefault();
+            
+            return result;
+            
         }
     }
 }
